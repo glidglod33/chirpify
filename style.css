@@ -1,0 +1,15 @@
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+form input[type=submit]{
+    max-width: min-content;
+}
+
+form input{
+    margin-bottom: 1em;
+    padding: 0.5em;
+}
