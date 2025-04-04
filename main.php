@@ -12,3 +12,5 @@ $stmt = $conn->prepare("INSERT into accounts(username,password) VALUES (:usernam
 $stmt->bindParam(':username', $_POST['gebruikersnaam']);
 $stmt->bindParam(':password', $_POST['wachtwoord']);
 $stmt->execute();
+
+echo "hallo"
