@@ -7,9 +7,6 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1): ?>
-<?php endif;
-
 $stmt = $conn->prepare("
     SELECT tweets.*, accounts.username,
     EXISTS (
@@ -44,7 +41,9 @@ $tweets = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="navbar-right">
         <a href="home.php">Home</a>
         <a href="logout.php" class="logout-button">Logout</a>
+        <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1): ?>
         <a href="admin_panel.php" class="logout-button">Admin Panel</a>
+    <?php endif; ?>   
     </div>
 </nav>
 
