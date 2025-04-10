@@ -1,15 +1,234 @@
-form {
-    max-width: 400px;
+/* Algemene body stijl */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #15202b;
+    color: #e1e8ed;
+}
+
+/* Navbar styles */
+.navbar {
+    width: 100%;
+    background-color: #192734;
+    border-bottom: 1px solid #38444d;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    flex-wrap: wrap;
+}
+
+.navbar-left {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1da1f2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar-right a {
+    color: #1da1f2;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.navbar-right a.logout-button {
+    margin-left: 10px; /* ruimte tussen Home en Logout */
+}
+
+
+
+
+.logo-text {
+    margin-left: 5px;
+}
+
+.navbar-middle {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.navbar-middle a {
+    color: #1da1f2;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.navbar-middle a:hover {
+    background-color: #1da1f2;
+    color: white;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    padding-right: 45px; /* ruimte van rechterkant scherm */
+    gap: 10px;
+}
+
+.username {
+    font-weight: bold;
+    color: #e1e8ed;
+}
+
+/* Logout button */
+.logout-button {
+    margin-left: 10px; /* ruimte tussen home en logout */
+    border: 2px solid #1da1f2;
+    padding: 6px 12px;
+    border-radius: 20px;
+    color: #1da1f2;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #1da1f2;
+    color: white;
+}
+
+/* Main content */
+.content {
+    max-width: 600px;
     margin: 0 auto;
+    padding: 100px 20px 30px;
+}
+
+/* Tweet kaart */
+.tweet {
+    border: 1px solid #38444d;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #192734;
+}
+
+/* Formulier */
+form {
+    background-color: #192734;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+form input[type="file"],
+form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #15202b;
+    border: 1px solid #38444d;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+}
+
+form input[type="submit"],
+button {
+    background-color: #1da1f2;
+    border: none;
+    padding: 10px 15px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover,
+form input[type="submit"]:hover {
+    background-color: #1991da;
+}
+
+/* Afbeeldingen in tweets */
+.tweet img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Verwijder-knop */
+.delete-form {
+    display: inline;
+    margin-left: 10px;
+    padding: 10px;
+}
+
+/* Login & Register pagina layout */
+.center-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #0d1117;
+}
+
+/* Kaart voor login/register */
+.auth-card {
+    background-color: #161b22;
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    color: white;
+}
+
+.auth-card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.auth-card form {
     display: flex;
     flex-direction: column;
 }
 
-form input[type=submit]{
-    max-width: min-content;
+.auth-card input[type="text"],
+.auth-card input[type="password"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #38444d;
+    border-radius: 5px;
+    background-color: #0d1117;
+    color: white;
 }
 
-form input{
-    margin-bottom: 1em;
-    padding: 0.5em;
+.auth-card input[type="submit"],
+.auth-card button {
+    background-color: #1da1f2;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.auth-card input[type="submit"]:hover,
+.auth-card button:hover {
+    background-color: #1991da;
+}
+
+/* Textarea fix */
+form textarea {
+    resize: none;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+/* File input iets mooier */
+form input[type="file"] {
+    padding: 8px;
+    font-family: inherit;
 }
