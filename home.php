@@ -43,6 +43,7 @@ $tweets = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <a href="logout.php" class="logout-button">Logout</a>
         <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1): ?>
         <a href="admin_panel.php" class="logout-button">Admin Panel</a>
+        <a href="edit_profile.php">Profiel</a>
     <?php endif; ?>   
     </div>
 </nav>
@@ -54,11 +55,12 @@ $tweets = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <h1><span class="username">Hi <?= htmlspecialchars($_SESSION['username']) ?>!</span></h1>
 
     <h3>Post something:</h3>
-    <form action="post_tweet.php" method="post" enctype="multipart/form-data">
-        <textarea name="content" placeholder="What's on your mind?" required></textarea><br>
-        <input type="file" name="tweetImage"><br>
-        <input type="submit" value="Post">
-    </form>
+    <form action="post_tweet.php" method="POST" enctype="multipart/form-data">
+    <textarea name="content" required></textarea>
+    <input type="file" name="tweetImage">
+    <button type="submit">Post</button>
+</form>
+
 
     <h3>All Chirps:</h3>
 

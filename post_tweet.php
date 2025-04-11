@@ -31,3 +31,9 @@ $stmt->execute();
 // Ga terug naar dashboard
 header("Location: home.php");
 exit;
+
+$uploadDir = "uploads/";
+
+if (!is_dir($uploadDir)) {
+    mkdir($uploadDir, 0755, true); // Maakt de uploads map aan als die er nog niet is
+}
