@@ -41,9 +41,10 @@ $tweets = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="navbar-right">
         <a href="home.php">Home</a>
         <a href="logout.php" class="logout-button">Logout</a>
+        <a href="edit_profile.php">Profiel</a>
         <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1): ?>
         <a href="admin_panel.php" class="logout-button">Admin Panel</a>
-        <a href="edit_profile.php">Profiel</a>
+
     <?php endif; ?>   
     </div>
 </nav>
